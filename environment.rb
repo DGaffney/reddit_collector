@@ -13,6 +13,7 @@ MongoMapper.database = "kotaku_in_action"
 Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file }
 Dir[File.dirname(__FILE__) + '/extensions/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/workers/*.rb'].each {|file| require file }
 Sidekiq.configure_client do |config|
   config.redis = { :size => 1 }
 end
